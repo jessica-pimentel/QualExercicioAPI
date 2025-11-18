@@ -1,4 +1,13 @@
+using QualExercicioAPI.Extensions;
+using QualExercicioAPI.Settings;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// JWT Settings
+builder.Services.Configure<JwtSettings>(
+    builder.Configuration.GetSection("JwtSettings"));
+
+builder.Services.AddDependencyInjection();
 
 // Add services to the container.
 

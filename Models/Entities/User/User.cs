@@ -1,4 +1,6 @@
-﻿namespace QualExercicioAPI.Models.Entities.User
+﻿using QualExercicioAPI.Models.Enum;
+
+namespace QualExercicioAPI.Models.Entities.User
 {
     public class User
     {
@@ -6,6 +8,6 @@
         public string Name { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public string Role { get; set; }
+        public RoleEnum Role { get; set; }
     }
 }
