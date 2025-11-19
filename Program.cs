@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using QualExercicioAPI.Data;
 using QualExercicioAPI.Extensions;
 using QualExercicioAPI.Settings;
 
@@ -15,6 +17,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<QualExercicioDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
